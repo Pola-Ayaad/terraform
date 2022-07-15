@@ -18,3 +18,7 @@ create dynamodb for locking state
 
 create secrets in secret manager for the private ssh key
 
+
+
+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
+
