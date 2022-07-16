@@ -6,9 +6,9 @@ resource "tls_private_key" "admin" {
 }
 
 resource "local_file" "admin-key" {
-    content = tls_private_key.admin.private_key_pem
-    filename = "access-key.pem"
-  
+  content  = tls_private_key.admin.private_key_pem
+  filename = "access-key.pem"
+
 }
 
 resource "aws_key_pair" "admin" {
