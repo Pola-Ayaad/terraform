@@ -1,5 +1,5 @@
 resource "aws_vpc" "public-vpc" {
-  cidr_block           = "10.0.0.0/16"
+  cidr_block           = var.vpc_cidr
   enable_dns_support   = "true"
   enable_dns_hostnames = "true"
   tags = {
@@ -7,4 +7,10 @@ resource "aws_vpc" "public-vpc" {
   }
 }
 
-
+##WHY## to get the time of the creation 
+resource "null_resource" "command" {
+  
+  provisioner "local-exec" {
+    command = "date > date.txt"
+  }
+}
