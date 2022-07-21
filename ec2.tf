@@ -5,6 +5,12 @@ resource "aws_instance" "bastion" {
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
   key_name               = aws_key_pair.admin.key_name
 
+  ###WHY### to export the IP of the public EC2 to a txt file
+  provisioner "local-exec" {
+    command = "echo ${self.public_ip} > ip_address.txt"
+
+  }
+
   tags = {
     Name = "bastion"
   }
