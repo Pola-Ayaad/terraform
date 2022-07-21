@@ -2,7 +2,7 @@
 resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"
   description = "Allow ssh inbound traffic"
-  vpc_id      = aws_vpc.public-vpc.id
+  vpc_id      = module.network.vpc_id
 
   ingress {
     description = "allow_ssh"
@@ -30,7 +30,7 @@ resource "aws_security_group" "allow_ssh" {
 resource "aws_security_group" "allow_ssh_vpc" {
   name        = "allow_ssh_vpc"
   description = "Allow ssh inbound traffic_vpc"
-  vpc_id      = aws_vpc.public-vpc.id
+  vpc_id      = module.network.vpc_id
 
   ingress {
     description = "allow_ssh_vpc"

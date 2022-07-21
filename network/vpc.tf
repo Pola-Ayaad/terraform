@@ -1,5 +1,5 @@
 resource "aws_vpc" "public-vpc" {
-  cidr_block           = var.vpc_cidr
+  cidr_block           = var.vpc_cidr_module
   enable_dns_support   = "true"
   enable_dns_hostnames = "true"
   tags = {
